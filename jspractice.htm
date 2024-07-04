@@ -1,0 +1,53 @@
+<html>
+
+<body>
+  <p id="demo"></p>
+  <script>
+    /*const num = {};
+    num[Symbol.iterator] = function() {
+      let n = 0;
+      done = false;
+      return {
+        next() {
+          n+=2;
+          if (n%97 == 0) {done = true}
+          return {value:n, done:done}; 
+        }
+      };
+    }
+    
+    let iterator = num[Symbol.iterator]();
+    
+    for (x of num) {
+      var result = iterator.next();
+      if (result.done) break;
+    }
+    result.value = result.value + 2
+    document.getElementById("demo").innerHTML = result.value;*/
+    const cars = [{ brand: "Honda", situation: 2 }, { brand: "Renault", situation: 3 }, { brand: "Ford", situation: 1 }];
+
+    let a;
+
+    const result = Map.groupBy(cars, ({ situation }) => {
+
+      return situation
+    })
+
+    let text = "These cars are in a good situation: <br>";
+    console.log(result.entries(), 'result');
+    for (let x of result.get(3)) {
+      text += x.brand + " " + "is Good" + "<br>";
+    }
+    text += "These cars are in a normal situation: <br>";
+    for (let x of result.get(2)) {
+      text += x.brand + " " + "is Ok" + "<br>";
+    }
+    text += "These cars are in a bad situation: <br>";
+    for (let x of result.get(1)) {
+      text += x.brand + " " + "is Bad" + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+  </script>
+</body>
+
+</html>
