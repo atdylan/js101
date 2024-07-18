@@ -1,9 +1,20 @@
 <html>
 
 <body>
+  <!--
+  <input id="demo1" type="text">Please enter the coefficient of x&#178;</input>
+  <br>
+  <input id="demo2" type="text">Please enter the coefficient of x</input>
+  <br>
+  <input id="demo3" type="text">Please enter the constant</input>
+  <br>
+  <button type="button" onclick="countParabol()">Find zeros</button>
+  <p id="errdesc"></p>
+-->
   <p id="demo"></p>
   <script>
-    /*const num = {};
+    /*
+    const num = {};
     num[Symbol.iterator] = function() {
       let n = 0;
       done = false;
@@ -23,7 +34,9 @@
       if (result.done) break;
     }
     result.value = result.value + 2
-    document.getElementById("demo").innerHTML = result.value;*/
+    document.getElementById("demo").innerHTML = result.value;
+    */
+    /*
     const cars = [{ brand: "Honda", situation: 2 }, { brand: "Renault", situation: 3 }, { brand: "Ford", situation: 1 }];
 
     let a;
@@ -47,6 +60,118 @@
       text += x.brand + " " + "is Bad" + "<br>";
     }
     document.getElementById("demo").innerHTML = text;
+    */
+    /*
+    let userinfo = new Map([['id1','827642638'], ['serverno1','8452'], ['id2','92649847'], ['serverno2','8219']]);
+    let text = "";
+    for (const [key, value] of userinfo) {
+    text += key + ' is ' + value + '<br>' ;
+    }
+    document.getElementById("demo").innerHTML = text;
+    */
+    /*
+    function countParabol() {
+      
+      const message = document.getElementById("errdesc");
+      message.innerHTML = "";
+      
+      let coeffa = document.getElementById("demo1").value;
+      let coeffb = document.getElementById("demo2").value;
+      let coeffc = document.getElementById("demo3").value;
+      
+      coeffa = Number(coeffa)
+      coeffb = Number(coeffb)
+      coeffc = Number(coeffc)
+      
+      let bpow2 = coeffb ** 2;
+      let minus4ac = (-4) * coeffa * coeffc;
+      let delta = bpow2 + minus4ac;
+      let deltasq = Math.sqrt(delta)
+      let x1 = ((-coeffb) + deltasq) / (2 * coeffa);
+      let x2 = ((-coeffb) - deltasq) / (2 * coeffa);
+
+      try {
+        if (isNaN(delta) == true) throw "Please enter a real number for every coefficient"
+        if (coeffa == 0) throw "Please enter a real number except 0 for leading coefficient"
+        if (delta < 0) throw "The parabol you have entered does not have zeros"
+      }
+      catch (err) {
+        message.innerHTML = err;
+      }
+      finally {
+        (delta>=0) && isNaN(delta) == false && (coeffa != 0) ? document.getElementById("demo").innerHTML = "Zeros of the parapol: " + x1 + ", " + x2:
+        document.getElementById("demo").innerHTML = "";
+      }
+    }
+    */
+    /*
+    class Fighters {
+      constructor(hero, dmgtype, dmgeffect) {
+        this.hero = hero;
+        this.dmgtype = dmgtype;
+        this.dmgeffect = dmgeffect;
+      }
+    }
+
+    class Amount extends Fighters {
+      constructor(hero, dmgtype, dmgeffect, hp, amount) {
+        super(hero, dmgtype, dmgeffect);
+        this.amount = amount;
+        this.hp = hp;
+      }
+      static TotalHP(instance) {
+        return `Total HP of the Hero: ${instance.hp}`;
+      }
+      static DamageAmount(instance) {
+        return `Damage Amount of Hero: ${instance.amount}`;
+      }
+      static DamageType(instance) {
+        return `Damage Type of Hero is: ${instance.dmgtype}`;
+      }
+      static DamageEffect(instance) {
+        return `Damage Method of Hero is: ${instance.dmgeffect}`;
+      }
+    }
+
+    const Hero = new Amount("Vyra", "Magic", "Burst/TTK", 2567, 134);
+
+    document.getElementById("demo").innerHTML = `Name: ${Hero.hero}</br>`+ `${Amount.DamageType(Hero)}</br>` + `${Amount.DamageEffect(Hero)}</br>` + `${Amount.TotalHP(Hero)}</br>` + `${Amount.DamageAmount(Hero)}`;
+    */
+    /*
+    function vehmaint(a) {
+      let situation = new Promise((resolve, reject) => {
+        if (a == 0) { resolve("finished") }
+        else { reject("maintaining") }
+      });
+      return situation;
+    }
+
+    async function qa1(a) {
+      try {
+        let res = await vehmaint(a);
+        document.getElementById("demo").innerHTML = res;
+      }
+      catch (error) {
+        document.getElementById("demo").innerHTML = error;
+      }
+    }
+    qa1(1);
+    */
+    /*
+    const users = {
+      name: 'Ali',
+      lastName: 'Emrah',
+      id: 1
+    };
+
+    function getFullName() {
+      return `Full Name: ${this.name} ${this.lastName}`
+    }
+
+    const bindFN = getFullName.bind(users)
+
+    document.getElementById("demo").innerHTML = bindFN();
+    */
   </script>
 </body>
 

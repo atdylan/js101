@@ -78,7 +78,7 @@ x=6;
 const x; x = 4; *incorrect
 const x = 4; *correct
 
-#Use const when declare a new : 
+#Use const when declare a new :
 -Array
 -Object
 -Function
@@ -89,7 +89,7 @@ const x = 4; *correct
 -Reassign a constant array
 -Reassign a constant object
  But you can change elements of a constant array and change properties of a constant object.
- 
+
 !Look for Javascript Hoisting!
 
 #Comparison operator === means equal value and equal type.
@@ -102,7 +102,7 @@ const x = 4; *correct
 
 !Search for usage of bitwise!
 
-#Extra large or extra small numbers can be written with scientific notation : 
+#Extra large or extra small numbers can be written with scientific notation :
 let y = 123e5; // 12300000
 let z = 123e-5; // 0.00123
 
@@ -111,10 +111,10 @@ let x = BigInt("264764025239852085847985734534573");
 
 #In JavaScript, a variable without a value has the value undefined. The type is also undefined
 
-#JavaScript Object : 
+#JavaScript Object :
 const hero = {name:"Vyro", HP=2591, Mana = 470, AP = "135", AD = "0"}
 
-#JavaScript object methods are functions definitions stored as property values : 
+#JavaScript object methods are functions definitions stored as property values :
 const person = {
  firstName: "John",
  lastName : "Doe",
@@ -145,7 +145,7 @@ Object x and person share the same memory address so that means any changes to x
 
 #An Object is an Unordered Collection of Properties.
 
-#The delete keyword deletes a property from an object : 
+#The delete keyword deletes a property from an object :
 comst person = {
  firstName: "John",
  lastName: "Doe",
@@ -191,7 +191,7 @@ let a=JSON.stringify(person);
 document.getElementById("demo").innerHTML = a;
 
 #Object constructor function example :
-function Hero(name, mana, hp, damage) { 
+function Hero(name, mana, hp, damage) {
   this.heroName = name;
   this.manaAmount = mana;
   this.hpAmount = hp;
@@ -221,13 +221,13 @@ const Vyro = new Hero("Vyro", 470, 2591, "AP")
 -charAt(position) *Does not count negative indexes.
 -charCodeAt(position)
 
-#String parts extracting methods : 
+#String parts extracting methods :
 -slice(start, end)
 -substring(start, end) *Computes negative indexes as 0 index.
 -substr(start, length) *length parameter is the length of the extracted part.
 
 #Converting upper and lowwr case :
--toUpperCase() 
+-toUpperCase()
 -toLowercase()
 
 let text1 = "Hello World!";
@@ -244,7 +244,7 @@ padded is equal to HHHHHHHHHello World!
 let result = text1.repeat(3);
 result is 3 multiples of text1
 
-#split() method allows convert a string to an array : 
+#split() method allows convert a string to an array :
 let text1.split("");
 
 #indexOf() method gives the first occurance index of the written inside the paranthesis :
@@ -255,7 +255,7 @@ like text.indexOf("Hello", 22)
 
 #The match() method returns an array containing the results of matching a string against a string (or a regular expression).
 
-#Type of the BigInt is BigInt. 
+#Type of the BigInt is BigInt.
 
 #Arithmetic between BigInt and Number is not allowed. BigInt can not have decimals.
 
@@ -291,7 +291,7 @@ like text.indexOf("Hello", 22)
 
 #ES2023 added the Array with() method as a safe way to update elements in an array without altering the original array.
 
-#The ... operator expands an iterable (like an array) into more elements: 
+#The ... operator expands an iterable (like an array) into more elements:
 
 #Date Set Method 	Description
 getFullYear() 	Get year as a four digit number (yyyy)
@@ -331,20 +331,20 @@ setTime() 	Set the time (milliseconds since January 1, 1970
 
 #if usage :
 if (condition) {
-//Block of codes will execute in case that condition is true 
+//Block of codes will execute in case that condition is true
 }
 
 #else statement will be in another block scope :
 if (condition) {
-//Block of codes will execute in case that condition is true 
+//Block of codes will execute in case that condition is true
 } else {
 //Block of codes will execute in case that all other conditions are false
 }
 
 else if :
 if (condition) {
-//Block of codes will execute in case that condition is true 
-} 
+//Block of codes will execute in case that condition is true
+}
 else if (condition2) {
 //Block of codes will execute if the conditions before
 } else {
@@ -358,7 +358,7 @@ else if (condition2) {
 switch (expression) {
   case 0:
   case 1:
-    example: "code"  
+    example: "code"
     break:
 }
 */
@@ -402,7 +402,7 @@ for (x in object) {
 let text = ""
 let array = ['a1', 'b1', 'c1' ]
 for (x of array) {
-  text += array[x];   
+  text += array[x];
 }
 */
 
@@ -418,7 +418,7 @@ num[Symbol.iterator] = function() {
     next() {
       n+=2;
       if (n%97 == 0) {done = true}
-      return {value:n, done:done}; 
+      return {value:n, done:done};
     }
   };
 }
@@ -458,10 +458,387 @@ for (const x in num) {
 const a1 = new Map([['a', 1],['b', 2], ['c', 3]]
 )
 a1.set('d', 4) *Will add or change elements
-a1.size *Will return number of elements 
+a1.size *Will return number of elements
 a1.delete("a1") *Will delete an element
 a1.clear() *Will clear all elements
 a1.has('d') *Will check if a element has included
 */
 
+//typeof null returns object. However null is a primitive value. null can empty(like undefined does) an object like this :
+/*
+let obj1 = {disres:1440+"px", inch:17.1+"inch" };
+obj1 = null;
+*/
 
+//(null == undefined) is true but (null === undefined) is false.
+
+//type of function () {} returns function.
+
+//If you want to check the subtype of an object you can use constructor property :
+/*
+[a,b,c].constructor; //returns array
+const userinfo = new Map([{id1:827642638, serverno1:8452}, {id2:92649847, serverno2:8219}]);
+userinfo.constructor; //returns map
+let clock = new Date();
+clock.constructor; // returns date
+*/
+
+//Number(variable/value) converts a variable to a number.
+
+//parseInt(string) and parseFloat(string) parses a string and returns an integer/a float.
+
+//Unary + operator can convert a variable to a number :
+/*
+let a = '121';
+let b = + a;
+document.getElementById("demo").innerHTML = typeof b; //returns number
+*/
+
+//String(value/variable) and variable = variable/value.toString() can convert a variable/value to a string
+
+/* JavaScript Number to String Type Methods */
+//Parameters decides length/exponential method.
+//toExponential() returns a string with exponential method.
+//toFixed() returns a string with decimals.
+//toPrecision returns() a string with specified length(parameter decides).
+
+//Destructing means pulling properties of an object as primtive values ;
+//Destructing doesn't change the original object.
+//You can assign a default value to a property with '=' if the property is missing.
+//And you can assign a property as a variable with different name with ':'.
+/*
+let object = {a:1, b:2, c:3}
+let {a, b, d = 4, c:e} = object;
+document.getElementById("demo").innerHTML = a + " " + b + " " + d + " " + e;
+*/
+
+//String destructing :
+/*
+let string1 = 'weufbwfubwuebf';
+let [a, b, c, d ] = string1;
+*/
+
+//Destructing can be used for any iterables.
+
+//If you want to skip array elements you can use extra commas or specific index :
+/*
+let array = ['a1', 'b1', 'c1' ];
+let [a,,c] = array; //or let [[0]a, [2]c];
+document.getElementById("demo").innerHTML = c;
+*/
+
+//If you want to destruct an array and create a new array from the rest you can use ...rest property :
+/*
+let array = ['a1', 'b1', 'c1' ];
+let [a, ,,,rest] = array;
+document.getElementById("demo").innerHTML = rest;
+*/
+
+//Destructing Maps :
+/*
+const userinfo = new Map([['id1',827642638], ['serverno1',8452], ['id2',92649847], ['serverno2',8219]]);
+let text = "";
+for (const[key, value] of userinfo) {
+  text += key + ' is ' + value + "<br>" ;
+}
+document.getElementById("demo").innerHTML = text;
+*/
+
+//For RegExp search method d modifier find matches that start or ends with a string ;
+/*
+let string1 = 'weufbwfubwuebf';
+let result = string1.match(/(w)(f)/d);
+document.getElementById("demo").innerHTML = result;
+*/
+
+//Writing of a regular function and arrow function :
+//Regular one :
+//x = function() {return "x is a variable"} ;
+//Arrow one :
+//x = () => {return "x is a variable"} ;
+
+//For arrow functions this keyword wil allways represent the owner(arrow function). That means there are no binding of this in arrow functions
+
+//Usage of classes :
+/*
+class classname{
+  constructor(parameters) {
+
+  }
+  method1() {
+
+  }
+}
+*/
+//Classes are templates for Objects.
+
+//Classes can be used for creating objects.
+
+//constructor method is a special method for initialize object properties.
+
+//JSON is a data interchange format. It's syntax is derived from JavaScript Object Notation but the JSON format is text only so it is language independent
+
+//JSON format evaluates to JavaScript Objects. JSON names require double quotes.
+
+/*Never break a return statement*/
+
+//Statements or assignments that can be placed outside the loop will make the loop run faster.
+
+//&&= is logical and assignment operator. If the first value is true assigns second value, if not doesn't change the value :
+/*
+let x = 0;
+x&&= 2;//x is 0
+x = "0";
+x&&= 4;//x is 4
+*/
+
+//||= is logical or assignment operator. If the first value is false assigns second value, if not doesn't change the value.
+
+//?? operator returns the first argument if it is not nullish. Otherwise returns second value.
+/*
+let x = undefined;
+x ?? 'x is undefined'//returns 'x is undefined'
+*/
+
+//??= is logical nullush coalescing assignment operator. If the first value is nullish assigns second value, if not doesn't change the value.
+
+//Adding a property or a method to a object constructor is possible with prototype keyword :
+/*
+function Hero(name, mana, hp, damage) {
+  this.heroName = name;
+  this.manaAmount = mana;
+  this.hpAmount = hp;
+  this.damageType = damage
+}
+
+Hero.prototype.amount = 132;
+
+Hero.prototype.dmgamount = function () {
+  return this.name + " " + this.hp;
+};
+*/
+
+//Object.assign() method copies properties from object/objects to a target object :
+/*
+const obj1 = {
+  a : "c",
+  b : "d"
+}
+
+const obj2 = {
+  e : "g",
+  f : "h"
+}
+
+Object.assign(obj1, obj2);
+*/
+
+//Adding or changing(value) an object property : 
+//Object.defineProperties.Property(obj1, "i", {value:"k"})
+
+//Changing meta data of a property :
+//Object.defineProperties.Property(obj1, "a", {writable:false}//Now a is read-only
+
+//Object.getOwnPropertyNames(object) lists all object properties(even not enumerables) :
+//document.getElementById("demo").innerHTML = Object.getOwnPropertyNames(obj) //Returns a, b, e, f, i
+
+//Getters and setters allow you to define object accessors
+
+//Usage of get keyword :
+/*
+const obj1 = {
+  a : "c",
+  b : "d",
+  e : "g",
+  f : "h",
+  get letter() {
+    return this.a;
+  }
+}
+*/
+
+//Usage of set keyword :
+/*
+const obj1 = {
+  a : "c",
+  b : "d",
+  e : "g",
+  f : "h",
+  set letter(a1) {
+    this.a = a1;
+  }
+}
+*/
+
+//Prevents adding object properties :
+//Object.preventExtensions(object)
+
+//Checking if addings is prevented :
+//Object.isExtensible(object)
+
+//Prevents adding and deleting object properties :
+//Object.seal(object)
+
+//Checking if it is sealed :
+//Object.isSealed(object)
+
+//Preventing any changes to an object :
+//Object.freeze(object)
+
+//Checking if it is frozen :
+//Object.isFrozen(object)
+
+//Self-Invoking Functions :
+//Just add parantheses to call function automatically :
+/*
+(function (){
+  let a = "experiment"
+  document.getElementById("demo").innerHTML = a;
+})();
+*/
+
+//Arguments object in functions :
+/*
+const a = maxIs(12,34,13,234,120,896)
+
+function maxIs() {
+  let max = -Infinity;
+  for (let i = 0; i < arguments.length; i++){
+    if (arguments[i] > max) {
+      max = arguments[i]
+    }
+  }
+  return max
+}
+
+document.getElementById("demo").innerHTML = a;
+*/
+
+//The call method takes arguments as separated. The apply method takes arguments as an array.
+
+//Making a counter;
+/*
+const add = (function (){
+  let counter = 0;
+  return function () {counter += 1; return counter}
+})();
+
+function plus() {
+  document.getElementById("demo").innerHTML = add();
+}
+*/
+
+//Classes are not hoisted.
+
+//Writing of a class with methods :
+/*
+class Fighters {
+  constructor(hero, dmgtype, dmgeffect) {
+    this.hero = hero;
+    this.dmgtype = dmgtype;
+    this.dmgeffect = dmgeffect;
+  }
+}
+
+class Amount extends Fighters {
+  constructor (hero, dmgtype, dmgeffect, hp, amount) {
+    super(hero, dmgtype, dmgeffect);
+    this.amount = amount;
+    this.hp = hp;
+  }
+  static TotalHP(instance) {
+    return "Total HP of the Hero: ${instance.hp}";
+  }
+  static DamageAmount(instance) {
+    return "Damage Amount of Hero: ${instance.amount} ";
+  }
+  static DamageType(instance){
+    return "Damage Type of Hero is: ${instance.dmgtype}";
+  }
+  static DamageEffect(instance){
+    return "Damage Method of Hero is: ${instance.dmgeffect}";
+  }
+}
+
+const Hero = new Amount("Vyra", "Magic", "Burst/TTK", 2567, 134);
+
+document.getElementById("demo").innerHTML = `${Amount.DamageType(Hero)}</br>` + `${Amount.DamageEffect(Hero)}</br>` + `${Amount.TotalHP(Hero)}</br>` + `${Amount.DamageAmount(Hero)}`;
+*/
+//Usage of setInterval method : 
+/*
+setInterval(oClock, 1)
+
+function oClock() {
+  let date = new Date();
+  document.getElementById("demo").innerHTML =
+  date.getHours() + " . " +
+  date.getMinutes() + " . " +
+  date.getSeconds() + " . " +
+  date.getMilliseconds();
+}
+*/
+
+//Callback functions are a way to make sure certain code does not execute until other code has already finished execution.
+
+//Producing code is a code that can take some time. Consuming code is a code that must wait for result.
+
+//Promise Object Syntax : 
+
+/*
+let newPromise = new Promise(function(resolve, reject) {
+  //Producing Code :
+  resolve();//Result 1
+  reject();//Result 2
+});
+
+//Consuming Code :
+newPromise.then(
+  function(value) {console.log("Promise resolved") },
+  function(error) {console.log("Promise rejected") }
+);
+*/
+
+//Promise example :
+/*
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+let myPromise = new Promise(function(myResolve, myReject) {
+  let x = 0;
+  x = Math.floor(Math.random(x)*2);
+
+  if (x == 0) {
+    myResolve("OK");
+  } else {
+    myReject("Error");
+  }
+});
+
+myPromise.then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+*/
+
+//async keyword makes a function return a promise. await keyword makes the function pause the execution and wait for a resolved promise before it continues.
+/*
+function vehmaint(a) {
+  let situation = new Promise((resolve, reject) => {
+    if (a == 0) { resolve("finished") }
+    else { reject("maintaining") }
+  });
+  return situation;
+}
+
+async function qa1(a) {
+  try {
+    let res = await vehmaint(a);
+    document.getElementById("demo").innerHTML = res;
+  }
+  catch (error) {
+    document.getElementById("demo").innerHTML = error;
+  }
+}
+qa1(1);
+*/
